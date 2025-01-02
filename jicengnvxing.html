@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>书籍查看器</title>
+  <meta charset="utf-8" />
+  <style type="text/css">
+    section {
+      width: 1000px;
+      height: 600px;
+      background-color: #252525;
+      border-radius: 10px;
+      margin: 50px auto;
+    }
+
+    section div:nth-child(1) {
+      height: 70px;
+      line-height: 70px;
+      padding-left: 10px;
+      color: #FFFFFF;
+    }
+
+    section div:nth-child(2) {
+      width: 100%;
+      height: 480px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      border: 1px solid #DEE1E6;
+      border-left-style: none;
+      border-right-style: none;
+    }
+
+    section div:nth-child(3) {
+      height: 50px;
+      line-height: 50px;
+      text-align: center;
+    }
+
+    input {
+      margin: 10px;
+      background-color: #000000;
+      border-style: none;
+      outline: none;
+      color: #FFFFFF;
+      width: 100px;
+      height: 30px;
+      border-radius: 10px;
+      font-size: 15px;
+      cursor: pointer;
+    }
+
+    input:hover {
+      font-size: 17px;
+    }
+
+    img {
+      width: 70%;
+    }
+  </style>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+    var rotate = 0;
+    // 新增：用于记录当前显示图片的索引，初始化为0，表示第一张图片
+    var currentIndex = 0;
+    // 新增：定义图片路径数组，根据实际情况添加更多图片路径
+    var imagePaths = ["images/neirong1.png", "images/neirong2.png", "images/neirong3.png"];
+
+    $(function () {
+      //上一页
+      $("#btn1").click(function () {
+        currentIndex--;
+        if (currentIndex < 0) {
+          currentIndex = imagePaths.length - 1;
+        }
+        updateImage();
+      });
+
+      // 下一页
+      $("#btn2").click(function () {
+        currentIndex++;
+        if (currentIndex >= imagePaths.length) {
+          currentIndex = 0;
+        }
+        updateImage();
+      });
+
+      //放大
+      $("#btn3").click(function () {
+        var width = $("img").width();
+        width += 30;
+        $("img").width(width);
+      });
+
+      //缩小
+      $("#btn4").click(function () {
+        var width = $("img").width();
+        width -= 30;
+        $("img").width(width);
+      });
+
+      //重置
+       $("#btn5").click(function () {
+        window.location.href = "remenbangdan.html"; // 替换为您想要跳转的网页地址
+      });
+
+
+      
+
+      // 更新图片显示
+      function updateImage() {
+        $("img").attr("src", imagePaths[currentIndex]);
+      }
+    })
+  </script>
+</head>
+
+<body>
+  <section>
+    <div>基层女性</div>
+    <div><img src="images/neirong1.png" /></div>
+    <div><input id="btn1" type="button" value="上一页" /><input id="btn2" type="button" value="下一页" /><input id="btn3" type="button" value="放大" /><input id="btn4" type="button" value="缩小" /><input id="btn5" type="button" value="退出" /></div>
+  </section>
+</body>
+
+</html>

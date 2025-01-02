@@ -1,0 +1,107 @@
+/* 公用样式 */
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+  }
+  
+   .logo {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 50px; 
+  height: auto;
+ }
+    
+ /* 导航菜单*/
+ .head {
+  background-color: #781a1a;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+ 
+ }
+    
+ /* 导航栏 div 元素样式 */
+.head div {
+    width: 200px;
+    line-height: 50px;
+    text-align: center;
+    color: #ffffff;
+    /* 添加过渡动画，让背景颜色变化更平滑，这里设置变化在0.3秒内以ease（缓动）方式过渡 */
+    transition: background-color 0.3s ease;
+}
+
+/* 鼠标悬停时的动画效果，改变背景颜色 */
+.head div:hover {
+    background-color: #5b5b97;
+}
+a {
+  text-decoration: none;
+}
+    
+ /* 搜索框样式 */
+ .search-box {
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+ }
+    
+ .search-box input[type="text"] {
+  padding: 10px;
+  width: 500px;
+  margin-right: 5px;
+ }
+    
+ .search-box input[type="submit"] {
+  padding: 10px 20px;
+  background-color: #781a1a;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+ }
+    
+ .search-box input[type="submit"]:hover {
+  background-color: #5b5b97;
+ }
+ <!--正文部分-->
+
+.card p {
+  color: #666;
+  line-height: 1.5;
+}
+
+.shelf_list h2 {
+  border-bottom:1px solid #781a1a;
+  color: #333;
+  font-family: Arial, sans-serif;
+}
+
+.zuopin {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 90px; 
+  padding: 20px;
+  justify-content: center;
+}
+
+.zuopin-item {
+  width: 100%; 
+  max-width: 150px; 
+  height: auto; 
+  transition: transform 0.3s ease; /* 鼠标悬停时的动画效果 */
+}
+
+.zuopin-item:hover {
+  transform: scale(1.05); /* 鼠标悬停时放大图片 */
+}
+
+a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #c65d5d;
+}

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>动画</title>
+  <meta charset="utf-8" />
+  <style type="text/css">
+    .fanhuishouye {
+            position: absolute;
+            top: 20px;
+            right: 110px;
+            width: 100px;
+            height: 50px;
+            background-color: #781a1a;
+            font-size: 18px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #c65d5d;
+        }
+
+    .view_box {
+      position: relative;
+      width: 400px;
+      height: 800px;
+      margin: 50px auto;
+      perspective: 900px;
+      /* 透视距离 */
+      transform-style: preserve-3d;
+      /* 控制子元素是否3D效果 */
+      perspective-origin: 0px 0px;
+      /* 透视位置 */
+    }
+
+    .view_box div {
+      width: 350px;
+      height: 500px;
+
+      text-align: center;
+      line-height: 300px;
+      font-size: 50px;
+
+      position: absolute;
+      left: 200px;
+      top: 70px; 
+      opacity:0.9;
+    }
+
+    #div2 {
+      background-image: url("tupian/12.png");
+      transform-origin: left;
+      transition: all 0.5s ease 0.5s;
+      /* 过渡动画 */
+      z-index: 3;
+    }
+
+    #div3 {
+      background-image: url("tupian/12.png");
+      transform-origin: left;
+      transition: all 0.5s ease 1s;
+      /* 过渡动画 */
+      z-index: 2;
+    }
+
+    #div4 {
+      background-image: url("tupian/12.png");
+      transform-origin: left;
+      transition: all 0.5s ease 1.5s;
+      /* 过渡动画 */
+      z-index: 1;
+    }
+  </style>
+  <script type="text/javascript">
+    window.onload = function () {
+      document.getElementById("div1").style.transform = "rotatey(-180deg)";
+      document.getElementById("div2").style.transform = "rotatey(-140deg)";
+      document.getElementById("div3").style.transform = "rotatey(-60deg)";
+      document.getElementById("div4").style.transform = "rotatey(0deg)";
+    }
+  </script>
+</head>
+
+<body>
+  <div class="view_box">
+    <div id="div1"></div>
+    <div id="div2"></div>
+    <div id="div3"></div>
+    <div id="div4"></div>
+  </div>
+
+  <div class="fanhuishouye"><a href="index.html">返回首页</a></div>
+
+</body>
+
+</html>

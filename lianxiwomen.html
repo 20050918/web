@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+  <head>
+    <meta name="referrer" content="no-referrer">
+    <title>联系我们</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="css/lianxiwomen.css" />
+    
+  </head>
+  <body>
+         <img src="images\logo.png" alt="Logo" class="logo">
+
+     <!-- 搜索框 -->
+     <div class="search-box">
+         <input type="text" placeholder="搜索书籍...">
+         <input type="submit" value="搜索">
+     </div>
+
+     <!-- 网页头-弹性布局 -->
+     <div class="head">
+        <div><a href="index.html">网站首页</a></div>
+        <div><a href="zuojiaminglu.html">作家名录</a></div>
+        <div><a href="xinwenzhongxin.html">新闻中心</a></div>
+        <div><a href="wodeshujia.html">我的书架</a></div>
+        <div><a href="lianxiwomen.html">联系我们</a></div>
+    </div>
+        <!--正文布局-->
+    <div class="main">
+      <h2 class="title">联系我们</h2>
+      <p class="main-p">CONTACT US</p>
+      <div id="img"></div>
+      <div class="content">
+          <h4 class="title-cont">杭州xxxx有限公司</h4>
+          <p>联系电话：400-xxx-1080</p>
+          <p>Email： kefu@xxxx.com</p>
+          <p>商务合作：marketing@xxxx.com</p>
+          <p>网站地址：http://www.xxxx.com</p>
+      </div>
+  </div>	
+  <script>
+      window.onload = function() {
+          var left = -300; // inner的左边距
+          var speed = 5; // 移动速度，5像素/帧
+          var imgDiv = document.getElementById('img');
+
+          function move() {
+              left += speed;
+              imgDiv.style.left = left + 'px';
+
+              if (left < 0) {
+                  window.requestAnimationFrame(move);
+              } else {
+                  left = 0;
+              }
+          }
+
+          move();
+      };
+  </script>
+
+
+  </body>
+ </html>
